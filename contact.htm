@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Add a gray background color with some padding */
+body {
+  font-family: Arial;
+  padding: 20px;
+  background: #fff0f5;
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  font-size: 40px;
+  text-align: center;
+  background-image:url(night1.jpg);
+	
+}
+
+
+
+.header {
+  background="flag.jpg"
+  padding: 30px;
+  text-align: center;
+}
+
+#navbar {
+  overflow: hidden;
+  background-color: #DC143C;
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#navbar a:hover {
+  background-color: #F08080;
+  color: white;
+}
+
+#navbar a.active {
+  background-color: #F08080;
+  color: white;
+}
+
+.content {
+  padding: 16px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+  border-right:1px solid #bbb;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+#myHeader {
+  background-image:url(sakura.jpg);
+  background-repeat: no-repeat;
+  padding: 100px;
+}
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #ccc; 
+}
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+}
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+
+/* Page Content */
+.content {padding:20px;}
+
+</style>
+<div id="myHeader">
+  	<h2></h2>
+</div>
+
+
+<ul>
+<div id="navbar">
+  	<li><a href="acasă.htm">Acasă</a></li>
+	<li><a href="geografie.htm">Geografia țării</a></li>
+	<li><a href="legende.htm">Legende</a></li>
+	<li><a href="curiozități.htm">Curiozități</a></li>
+	<li><a href="atracții.htm">Atracții turistice</a></li>
+	<li style="float:right"><a class="active" href="contact.htm">Contact</a></li>
+</div>
+</ul>
+<button onclick="topFunction()" id="myBtn" title="Go to top">&#8593</button>
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="dist/sakura.css" />
+  </head>
+  <body>
+    <script src="dist/sakura.js" text="text/javascript"></script>
+    <script>
+      var sakura = new Sakura('body', {
+        colors: [
+          {
+            gradientColorStart: 'rgba(255, 183, 197, 0.9)',
+            gradientColorEnd: 'rgba(255, 197, 208, 0.9)',
+            gradientColorDegree: 120,
+          },
+          {
+            gradientColorStart: 'rgba(255,189,189)',
+            gradientColorEnd: 'rgba(227,170,181)',
+            gradientColorDegree: 120,
+          },
+          {
+            gradientColorStart: 'rgba(212,152,163)',
+            gradientColorEnd: 'rgba(242,185,196)',
+            gradientColorDegree: 120,
+          },
+        ],
+        delay: 200,
+      });
+    </script>
+<div style="background-image: linear-gradient( 111.5deg,  rgba(228,247,255,1) 21.9%, rgba(255,216,194,1) 92.2% );">
+<div class="bg-image"></div>
+
+
+<div class="header">
+  <h1><font color="black">Contactează-ne</font></h1>
+<p><font color="black">catalinailinca.dan@gmail.com</font></p>
+</div>
+
+</body>
+<script>
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+</script>
+<script>
+//Get the button
+var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+</body>
+</html>

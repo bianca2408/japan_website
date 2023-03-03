@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+	<meta charset="utf-8">
+	<title>
+		Japonia
+	</title> 
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Add a gray background color with some padding */
+body {
+  font-family: Arial;
+  padding: 20px;
+  background: #fff0f5;
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  font-size: 40px;
+  text-align: center;
+  background: white;
+}
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/* The circles on the timeline */
+.container::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: white;
+  border: 4px solid #ed2939;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+  left: 0;
+}
+
+/* Place the container to the right */
+.right {
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -16px;
+}
+
+/* The actual content */
+.content {
+  padding: 20px 30px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+  /* Place the timelime to the left */
+  .timeline::after {
+  left: 31px;
+  }
+  
+  /* Full-width containers */
+  .container {
+  width: 100%;
+  padding-left: 70px;
+  padding-right: 25px;
+  }
+  
+  /* Make sure that all arrows are pointing leftwards */
+  .container::before {
+  left: 60px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .left::after, .right::after {
+  left: 15px;
+  }
+  
+  /* Make all right containers behave like the left ones */
+  .right {
+  left: 0%;
+  }
+}
+
+.header {
+  background="flag.jpg"
+  padding: 30px;
+  text-align: center;
+}
+
+#navbar {
+  overflow: hidden;
+  background-color: #DC143C;
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#navbar a:hover {
+  background-color: #F08080;
+  color: white;
+}
+
+#navbar a.active {
+  background-color: #F08080;
+  color: white;
+}
+
+.content {
+  padding: 16px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+  border-right:1px solid #bbb;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+#myHeader {
+  background-image:url(sakura.jpg);
+  background-repeat: no-repeat;
+  padding: 100px;
+}
+tabel {
+    border: 50px solid gray;
+  padding: 8px;
+}
+
+titlu {
+  text-align: center;
+  text-transform: uppercase;
+  color: #4CAF50;
+}
+
+box{
+  text-indent: 50px;
+  text-align: justify;
+  letter-spacing: 3px;
+}
+
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+<button onclick="topFunction()" id="myBtn" title="Go to top">&#8593</button>
+</style>
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link rel="stylesheet" href="dist/sakura.css" />
+  </head>
+  <body>
+    <script src="dist/sakura.js" text="text/javascript"></script>
+    <script>
+      var sakura = new Sakura('body', {
+        colors: [
+          {
+            gradientColorStart: 'rgba(255, 183, 197, 0.9)',
+            gradientColorEnd: 'rgba(255, 197, 208, 0.9)',
+            gradientColorDegree: 120,
+          },
+          {
+            gradientColorStart: 'rgba(255,189,189)',
+            gradientColorEnd: 'rgba(227,170,181)',
+            gradientColorDegree: 120,
+          },
+          {
+            gradientColorStart: 'rgba(212,152,163)',
+            gradientColorEnd: 'rgba(242,185,196)',
+            gradientColorDegree: 120,
+          },
+        ],
+        delay: 200,
+      });
+    </script>
+<div id="myHeader">
+  	<h2></h2>
+</div>
+		
+<ul>
+<div id="navbar">
+  	<li><a href="acasă.htm">Acasă</a></li>
+	<li><a href="geografie.htm">Geografia țării</a></li>
+	<li><a href="legende.htm">Legende</a></li>
+	<li><a class="active" href="curiozități.htm">Curiozități</a></li>
+	<li><a href="atracții.htm">Atracții turistice</a></li>
+	<li style="float:right"><a href="contact.htm">Contact</a></li>
+</div>
+</ul>
+<div style="background: linear-gradient(135deg, rgba(169, 34, 47, 0.26) 0%, rgba(169, 34, 47, 0.26) 7%,rgba(151, 53, 85, 0.26) 7%, rgba(151, 53, 85, 0.26) 23%,rgba(133, 72, 124, 0.26) 23%, rgba(133, 72, 124, 0.26) 33%,rgba(114, 92, 162, 0.26) 33%, rgba(114, 92, 162, 0.26) 63%,rgba(96, 111, 201, 0.26) 63%, rgba(96, 111, 201, 0.26) 90%,rgba(78, 130, 239, 0.26) 90%, rgba(78, 130, 239, 0.26) 100%),linear-gradient(90deg, rgba(23, 178, 123, 0.26) 0%, rgba(23, 178, 123, 0.26) 1%,rgba(39, 182, 133, 0.26) 1%, rgba(39, 182, 133, 0.26) 20%,rgba(56, 185, 143, 0.26) 20%, rgba(56, 185, 143, 0.26) 22%,rgba(72, 189, 154, 0.26) 22%, rgba(72, 189, 154, 0.26) 27%,rgba(89, 192, 164, 0.26) 27%, rgba(89, 192, 164, 0.26) 56%,rgba(105, 196, 174, 0.26) 56%, rgba(105, 196, 174, 0.26) 100%),linear-gradient(90deg, rgb(19, 41, 73) 0%, rgb(19, 41, 73) 1%,rgb(23, 37, 95) 1%, rgb(23, 37, 95) 19%,rgb(27, 33, 118) 19%, rgb(27, 33, 118) 27%,rgb(31, 29, 140) 27%, rgb(31, 29, 140) 53%,rgb(36, 26, 163) 53%, rgb(36, 26, 163) 64%,rgb(40, 22, 185) 64%, rgb(40, 22, 185) 79%,rgb(44, 18, 208) 79%, rgb(44, 18, 208) 83%,rgb(48, 14, 230) 83%, rgb(48, 14, 230) 100%);">
+<div class="timeline">
+ 
+<div class="container left">
+    <div class="content">
+      <h2> În japoneză, Japonia se traduce nippon, ceea ce înseamnă „Țara soarelui răsare”. Cândva s-a crezut că Japonia este prima țară în care se vede răsăritul.</h2>
+     </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>La sfârşitul secolului XIX, în Tokyo erau aproximativ 40.000 de ricşe, iar în prezent 60.000 de taxiuri, mai multe decât în oresele: Paris, Londra şi New York la un loc.</h2>
+      </div>
+  </div>
+  <div class="container left">
+    <div class="content">
+      <h2>Jocul de Sumo în Japonia este vechi de peste 1500 de ani. Un jucător cântărește mai mult de 300 de kg. Luptătorilor de sumo mai tineri li se cere în mod tradițional să-i spele pe cap pe luptătorii mai în vârstă. Luptătorii de sumo nu au voie să îşi taie părul, să conducă maşina şi sunt obligaţi să doarmă după masa de prânz</h2>
+      </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>Sonda spaţială japoneză Hayabusa este singura care a reuşit să aterizeze pe un asteroid şi să se întoarcă pe Pământ.</h2>
+      </div>
+  </div>
+  <div class="container left">
+    <div class="content">
+      <h2>Japonezii sunt cei mai bineveniţi turişti din lume pentru că sunt: politicoşi, nu sunt gălăgioşi, sunt calmi chiar şi când întâmpina greutăţi şi nu se plâng.</h2>
+      </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>A te închina e o formă de artă în Japonia, copiii fiind învăţaţi să-şi încline capul la intrarea în şcoală. Durata şi unghiul de înclinare al corpului, atunci când japonezul salută, variază în funcţie de persoană căreia i se adresează.</h2>
+      </div>
+  </div>
+<div class="container left">
+    <div class="content">
+      <h2> În Japonia nu se dă bacşiş la hotel, taxi sau restaurant, și nu se mănâncă pe stradă.</h2>
+      </div>
+  </div>
+<div class="container right">
+    <div class="content">
+      <h2>Japonezii când intră la toaletă schimbă papucii de casă cu cei speciali pentru toaletă. A folosi aceeaşi papuci e un semn de proastă creştere!</h2>
+      </div>
+  </div>
+<div class="container left">
+    <div class="content">
+      <h2> Prin faptul că japonezii sorb supa destul de gălăgios arată aprecierea şi respectul faţă de gazdă.</h2>
+      </div>
+  </div>
+<div class="container right">
+    <div class="content">
+      <h2> Japonezii acorda o mare importanţă informțiilor despre vreme, iar studiile referitoare la climă sunt de o mare acurateţe, astfel că, atunci când se anunţă ploaie, niciun japonez nu îşi uită umbrela acasă</h2>
+      </div>
+  </div>
+<div class="container left">
+    <div class="content">
+      <h2>  În şcolile japoneze nu există femei de serviciu, curăţenia făcându-se deopotrivă de către elevi şi profesori.</h2>
+      </div>
+  </div>
+<div class="container right">
+    <div class="content">
+      <h2> Teritoriul Japoniei este mai mare decât al Germaniei şi aproape egal cu cel al Italiei. Populaţia Japoniei de 125 milioane de locuitori este cu puţin mai mică decât cea a Rusiei. Cea mai mare insulă din Japonia este Honshu, urmată de Hokkaido şi Kyushu.</h2>
+      </div>
+  </div>
+<div class="container left">
+    <div class="content">
+      <h2> Japonezii folosesc sintagma “te iubesc”, formată din substantivul “ai – “dragoste” şi verbul auxiliar “suru – “a face” foarte rar, pentru că nu obişnuiesc să-şi exprime sentimentele în mod direct. Au credinţa că aceasta se dovedeşte prin bună purtare faţă de celălalt. Când îşi pun totuşi sentimentele în cuvinte, atunci preferă să folosească expresia “suki desu” care se traduce: “îmi placi”.</h2>
+      </div>
+  </div>
+<div class="container right">
+    <div class="content">
+      <h2> În Japonia, pantofii purtaţi în exterior sunt în general descălţaţi la intrare. Este necesar să pui pantofii unul lângă celălalt atent. Membrii familiei îşi pun pantofii în „getabako” (un cuier de pantofi sau dulap).</h2>
+      </div>
+  </div>
+<div class="container left">
+    <div class="content">
+      <h2> În Japonia se comercializează şi pepeni verzi pătraţi. Ei sunt de fapt pepeni verzi obişnuiţi,crescuţi în cutii pătrate pentru a fi depozitaţi mai uşor. Preţul lor este totuşi de 3 ori mai mare decât ai pepenilor verzi obişnuiţi.</h2>
+      </div>
+  </div>
+<div class="container right">
+    <div class="content">
+      <h2> Titlul de cel mai bătrân om din lume a fost deţinut de japonezul Shigechiyo Izumi. Acesta a fost “încoronat” pe 16 noiembrie 1976 şi a deţinut recordul până în momentul morţii, în 21 februarie 1986, pe o perioadă totală de 3.384 zile.</h2>
+      </div>
+  </div>
+<div class="container left">
+    <div class="content">
+      <h2>  În Japonia se află cea mai mare zonă urbană din lume. Aglomerarea metropolitană din jurul capitalei Tokyo se afla pe primul loc în lume ca număr de locuitori, începând din anii 1950.</h2>
+      </div>
+  </div>
+<div class="container right">
+    <div class="content">
+      <h2> În Japonia este considerat nepoliticos să rupi ambalajul unui cadou.</h2>
+      </div>
+  </div>
+<div class="container left">
+    <div class="content">
+      <h2> În Japonia, pisicile negre sunt considerate purtătoare de noroc.</h2>
+      </div>
+  </div>
+<div class="container right">
+    <div class="content">
+      <h2>Majoritatea telefoanelor mobile vândute în Japonia sunt impermeabile deoarece tinerii japonezi le folosesc chiar și în duș.</h2>
+      </div>
+  </div>
+<div class="container left">
+    <div class="content">
+      <h2> Japonia are a doua cea mai scăzută rată de omucideri din lume, însă din păcate, are o rată mare a sinuciderilor. Pădurea Aokigahara, situată la baza muntelui Fuji, este al doilea cel mai populat loc din lume pentru sinucider, după podul Golden Gate din San Francisco, SUA.</h2>
+      </div>
+  </div>
+<div class="container right">
+    <div class="content">
+      <h2> Japonia este cel mai mare producător de automobile din lume, iar compania japoneză Toyota este al treilea cel mai mare producător auto din lume.</h2>
+      </div>
+  </div>
+<div class="container left">
+    <div class="content">
+      <h2> Japonezii au mai multe animale de companie decât copii.</h2>
+      </div>
+  </div>
+<div class="container right">
+    <div class="content">
+      <h2> Japonezii au o rata mai mică a natalității. Sunt vândute mai multe scutece pentru adulți decât pentru copii.</h2>
+      </div>
+  </div>
+<div class="container left">
+    <div class="content">
+      <h2>Japonia are aproximativ 5,5 milioane de distribuitoare automate, cu unu pe aproape fiecare colț de stradă. Există automate care vând bere, cafea, țigări, vin, prezervative, orez, umbrele, hârtie igienică, becuri, ouă proaspete etc.</h2>
+      </div>
+  </div>
+</div>
+
+<script>
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+</script>
+<script>
+//Get the button
+var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>	
+	
+</body>
+</html>

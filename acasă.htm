@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+	<meta charset="utf-8">
+	<title>
+		Japonia
+	</title> 
+</head>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Add a gray background color with some padding */
+body {
+  font-family: Arial;
+  padding: 20px;
+  background: #fff0f5;
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  font-size: 40px;
+  text-align: center;
+  background: white;
+}
+
+
+#navbar {
+  overflow: hidden;
+  background-color: #DC143C;
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#navbar a:hover {
+  background-color: #F08080;
+  color: white;
+}
+
+#navbar a.active {
+  background-color: #F08080;
+  color: white;
+}
+
+.content {
+  padding: 16px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+  border-right:1px solid #bbb;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+#myHeader {
+  background-image:url(sakura.jpg);
+  background-repeat: no-repeat;
+  padding: 100px;
+}
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 75%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+  background-image:url(tokyocity.jpg);
+  width: 100%;
+  padding: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+background-color: #4158D0;
+background-image: linear-gradient(225deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+   padding: 20px;
+   margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #DC143C;
+  margin-top: 20px;
+}
+/* Fake image 2 */
+.fakeimge {
+  background-image:url(acasa1.jpg);
+  width: 100%;
+  padding: 20px;
+}
+/* Fake image 3 */
+.fakeimgea {
+  background-image:url(night.jpg);
+  width: 100%;
+  padding: 20px;
+}
+/* Add a card effect for articles */
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+div.b {
+  text-indent: 40px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+</style>
+<body background="fuji.jpg">
+
+<div id="myHeader">
+  	<h2></h2>
+</div>
+
+
+<ul>
+<div id="navbar">
+  	<li><a class="active" href="acasă.htm">Acasă</a></li>
+	<li><a href="geografie.htm">Geografia țării</a></li>
+	<li><a href="legende.htm">Legende</a></li>
+	<li><a href="curiozități.htm">Curiozități</a></li>
+	<li><a href="atracții.htm">Atracții turistice</a></li>
+	<li style="float:right"><a href="contact.htm">Contact</a></li>
+</div>
+</ul>
+
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="dist/sakura.css" />
+  </head>
+  <body>
+    <script src="dist/sakura.js" text="text/javascript"></script>
+    <script>
+      var sakura = new Sakura('body', {
+        colors: [
+          {
+            gradientColorStart: 'rgba(255, 183, 197, 0.9)',
+            gradientColorEnd: 'rgba(255, 197, 208, 0.9)',
+            gradientColorDegree: 120,
+          },
+          {
+            gradientColorStart: 'rgba(255,189,189)',
+            gradientColorEnd: 'rgba(227,170,181)',
+            gradientColorDegree: 120,
+          },
+          {
+            gradientColorStart: 'rgba(212,152,163)',
+            gradientColorEnd: 'rgba(242,185,196)',
+            gradientColorDegree: 120,
+          },
+        ],
+        delay: 200,
+      });
+    </script>
+<button onclick="topFunction()" id="myBtn" title="Go to top">&#8593</button>
+	<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+     <a href="atracții.htm" ><font size="5">Tokyo</font></a>
+      <h5>Renăscând din cenușă, Mar 10, 2020</h5>
+      <div class="fakeimg" style="height:200px;"></div>
+      <p><font size="4">Capitala și cel mai mare oraș al Japoniei, Tokyo este situat în zona de mijloc a Insulei Honshu. Tokyo este cel mai important centru cultural și comercial al țării, având peste 400 de instituții de învățământ superior, 117 de universități, 247 biblioteci, Academia japoneză (1879), 185 de cinematografe, 2000 de temple, 160.000 de restaurante...</p></div>
+    <div class="card">
+      <a href="legende.htm" ><font size="5">Amematsu si tsunami-ul</font></a>
+      <h5>Mânia spiritului, Feb 17, 2020</h5>
+      <div class="fakeimge" style="height:200px;"></div>
+      <p>Japonia se află într-un teritoriu care, datorită situației sale geologice și din cele mai vechi timpuri, este pedepsit frecvent de numeroase catastrofe naturale, cum ar fi cutremurele sau tsunami-urile. În acest sens, putem găsi și mituri și legende care încearcă să explice de ce apar aceste fenomene. Un exemplu este găsit în legenda lui Amemasu, care încearcă să explice motivul tsunami-ului. Legenda spune că în antichitate a existat un yokai gigantic...</p></div>
+  </div>
+  <div class="rightcolumn">
+    <div class="card">
+      <a href="contact.htm" ><font size="5">Biografie</font></a>
+	<h6></h6>
+      <div class="fakeimgea" style="height:100px;"></div>
+      <p></p>
+    </div>
+    <div class="card">
+ <h1>Steagul Japoniei: semnificație</h1>
+<center><img src="flagjapan.png" height="200" width="300"></center>
+<div class="b"><p>Japonia este țara soarelui în ascensiune, și acesta este sensul lui Hinomaru. Discul roșu mare care este situat în partea centrală a steagului este reprezentantul soarelui. Această stea are originea sa simbolică japoneză în originea divină a împăratului țării.
+</p></div>
+
+    </div>
+    <div class="card">
+     <h2><center>Ora Japoniei</center></h2>
+<center><iframe src="http://free.timeanddate.com/clock/i77o8m8v/n248/szw210/szh210/hocff91a4/hbw0/hfcfc6c85/cf100/hncdc143c/fas18/facf1f1f1/fdi86/mqcfff/mqs2/mql3/mqw4/mqd70/mhcfff/mhs2/mhl3/mhw4/mhd70/mmcf1f1f1/mms2/hwm2/hhcfff/hhs3/hmcfff/hms2/hsc000" frameborder="0" width="210" height="210"></iframe>
+</center>
+
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <h2></h2>
+</div>
+	<script>
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+</script>
+<script>
+//Get the button
+var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+</body>
+</html>
